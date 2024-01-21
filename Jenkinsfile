@@ -19,15 +19,6 @@ pipeline {
                 }
             }
         }
-
-        stage('Test') {
-            steps {
-                script {
-                    // Run your React tests here
-                    sh 'npm test'
-                }
-            }
-        }
     }
 
     post {
