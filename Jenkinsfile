@@ -25,8 +25,8 @@ pipeline {
         always {
             // Cleanup steps (e.g., stop and remove the Docker container)
             script {
-                sh 'sudo docker stop $(docker ps -q --filter ancestor=jenkinsdemo:1.0.0)'
-                sh 'sudo docker rm $(docker ps -aq --filter ancestor=jenkinsdemo:1.0.0)'
+                sh 'sudo docker stop $(sudo docker ps -q --filter ancestor=jenkinsdemo:1.0.0)'
+                sh 'sudo docker rm $(sudo docker ps -aq --filter ancestor=jenkinsdemo:1.0.0)'
             }
         }
     }
