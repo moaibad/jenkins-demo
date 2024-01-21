@@ -23,13 +23,4 @@ pipeline {
             }
         }
     }
-
-    post {
-        always {
-            //
-            // script {
-                
-            // }
-        }
-    }
 }
