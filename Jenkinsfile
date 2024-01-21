@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                    // Build docker image
+                    // Build the Docker image
                     sh 'sudo docker build -t jenkinsdemo:1.0.0 .'
                 }
             }
@@ -14,13 +14,20 @@ pipeline {
         stage('Run') {
             steps {
                 script {
-                    //Hentikan container yang berjalan
-                    sh 'sudo docker stop jenkinsdemo'
-                    sh 'sudo docker rm jenkinsdemo'
-                    // Jalankan docker container
+                    // Run the Docker container
                     sh 'sudo docker run --name jenkinsdemo -p 5000:3000 -d jenkinsdemo:1.0.0'
                 }
             }
+        }
+    }
+
+    post {
+        always {
+            // // Cleanup steps (e.g., stop and remove the Docker container)
+            // script {
+            //     sh 'sudo docker stop $(sudo docker ps -q --filter ancestor=jenkinsdemo:1.0.0)'
+            //     sh 'sudo docker rm $(sudo docker ps -aq --filter ancestor=jenkinsdemo:1.0.0)'
+            // }
         }
     }
 }
