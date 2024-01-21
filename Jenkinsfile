@@ -26,10 +26,10 @@ pipeline {
 
     post {
         always {
-            // Cleanup steps (e.g., stop and remove the Docker container)
-            script {
+            //
+            // script {
                 
-            }
+            // }
         }
     }
 }
