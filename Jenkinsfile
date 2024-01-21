@@ -15,7 +15,7 @@ pipeline {
             steps {
                 script {
                     // Run the Docker container
-                    sh 'sudo docker run --name jenkinsdemo -p 5000:3000 -d jenkinsdemo:1.0.0'
+                    sh 'sudo docker -p 5000:3000 -d jenkinsdemo:1.0.0'
                 }
             }
         }
