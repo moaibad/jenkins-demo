@@ -14,7 +14,7 @@ pipeline {
             }
         }
 
-        stage('Run') {
+        stage('Deploy') {
             steps {
                 script {
                     // Run the Docker container
