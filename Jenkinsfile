@@ -5,6 +5,9 @@ pipeline {
         stage('Build') {
             steps {
                 script {
+                    // Hapus kontainer jika sudah berjalan
+                    sh 'sudo docker rm -f jenkinsdemo || true'
+                    
                     // Build the Docker image
                     sh 'sudo docker build -t jenkinsdemo:1.0.0 .'
                 }
