@@ -14,7 +14,5 @@ RUN npm install
 # Copy the entire project files into the working directory in the container
 COPY . .
 
-RUN npm run build
-
 # Run the Vite development server
-CMD ["npm", "run", "preview"]
+CMD ["npm", "start"]
