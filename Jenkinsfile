@@ -15,8 +15,8 @@ pipeline {
             steps {
                 script {
                     //Hentikan container yang berjalan
-                    sh 'sudo docker stop $(sudo docker ps -q --filter ancestor=jenkinsdemo:1.0.0)'
-                    sh 'sudo docker rm $(sudo docker ps -aq --filter ancestor=jenkinsdemo:1.0.0)'
+                    sh 'sudo docker stop jenkinsdemo'
+                    sh 'sudo docker rm jenkinsdemo'
                     // Jalankan docker container
                     sh 'sudo docker run --name jenkinsdemo -p 5000:3000 -d jenkinsdemo:1.0.0'
                 }
